@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static i18n %}
+<title>{% block title %}Blog Post: {{ post.title }}{% endblock title %}</title>
+{% block content %}
+<header class="container">
+	<h1 class="text-center mt-5 mb-3 text-dark">{{ post.title }}</h1>
+	<div class="text-center pb-3 font-weight-bold">
+		<small class="text-center text-secondary">Date posted: <i>{{ post.created_on }}</i></small>
+	</div>
+</header>
+<section class="container">
+	<article>
+		<div class="card mb-3 bg-light">
+			<div class="card-body bg-dark">
+				<p class="card-text text-white">{{ post.body|safe }} </p>
+			</div>
+		</div>
+	</article>
+</section>
+{% endblock content %}
