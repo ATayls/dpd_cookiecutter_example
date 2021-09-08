@@ -71,6 +71,11 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    # Django plotly dash
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    'dpd_components',
+    'dpd_static_support',
+    'bootstrap4',
 ]
 
 LOCAL_APPS = [
@@ -133,6 +138,9 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.common.BrokenLinkEmailsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # Django plot dash middleware (for bootstrap)
+    'django_plotly_dash.middleware.BaseMiddleware',
+    'django_plotly_dash.middleware.ExternalRedirectionMiddleware',
 ]
 
 # STATIC
@@ -147,6 +155,10 @@ STATICFILES_DIRS = [str(APPS_DIR / "static")]
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    # django plotly dash staticfiles finders (for bootstrap)
+    "django_plotly_dash.finders.DashAssetFinder",
+    "django_plotly_dash.finders.DashComponentFinder",
+    "django_plotly_dash.finders.DashAppDirectoryFinder",
 ]
 
 # MEDIA
@@ -271,3 +283,11 @@ SOCIALACCOUNT_ADAPTER = "dpd_cc_example.users.adapters.SocialAccountAdapter"
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+X_FRAME_OPTIONS='SAMEORIGIN'
+
+PLOTLY_COMPONENTS = [
+    'dash_core_components',
+    'dash_html_components',
+    'dash_renderer',
+    'dpd_components'
+]
