@@ -20,6 +20,8 @@ urlpatterns = [
     path("", include("dpd_cc_example.example.urls", namespace="example")),
     # django plotly dash
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
+    # Dashboard
+    path('dashboard/', include('dpd_cc_example.dashboard.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
