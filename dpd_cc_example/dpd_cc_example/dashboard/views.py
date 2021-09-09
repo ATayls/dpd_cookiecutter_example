@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+def BasicDashApp(request):
+    return render(request, 'pages/basic_dashboard.html')
+
