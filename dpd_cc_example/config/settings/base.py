@@ -82,6 +82,7 @@ LOCAL_APPS = [
     "dpd_cc_example.users.apps.UsersConfig",
     # Your stuff: custom apps go here
     "dpd_cc_example.example.apps.ExampleConfig",
+    "dpd_cc_example.dashboard.apps.DashboardConfig"
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
