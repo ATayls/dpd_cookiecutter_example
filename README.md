@@ -138,3 +138,17 @@ see
 9. Include the urls in config/urls.py.
     - path('<define-url>/', include('<app-name>.urls')),
 10. Optionally add a nav link to base template.
+
+
+# More Useful docs
+
+### Full tutorials
+ - https://appliku.com/post/django-project-tutorial-beginners-settings-docker
+
+### allauth
+ - https://medium.com/@ksarthak4ever/django-custom-user-model-allauth-for-oauth-20c84888c318
+ - https://developpaper.com/a-handy-guide-for-newbie-of-overriding-django-allauth-forms/
+ - https://dev.to/danielfeldroy/customizing-django-allauth-signup-forms-2o1m
+ 
+### crispy forms
+ - http://www.merixstudio.com/blog/django-crispy-forms-what-are-they-about
