@@ -269,16 +269,32 @@ LOGGING = {
 # ------------------------------------------------------------------------------
 ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION", True)
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_AUTHENTICATION_METHOD = "username"
+ACCOUNT_AUTHENTICATION_METHOD = "email"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION = "optional"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_ADAPTER = "dpd_cc_example.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = "dpd_cc_example.users.adapters.SocialAccountAdapter"
 
+
+# https://django-allauth.readthedocs.io/en/latest/advanced.html#custom-user-models
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_USERNAME_REQUIRED = False
+
+# Control the forms that django-allauth uses
+ACCOUNT_FORMS = {
+    "login": "allauth.account.forms.LoginForm",
+    "signup": "allauth.account.forms.SignupForm",
+    "add_email": "allauth.account.forms.AddEmailForm",
+    "change_password": "allauth.account.forms.ChangePasswordForm",
+    "set_password": "allauth.account.forms.SetPasswordForm",
+    "reset_password": "allauth.account.forms.ResetPasswordForm",
+    "reset_password_from_key": "allauth.account.forms.ResetPasswordKeyForm",
+    "disconnect": "allauth.socialaccount.forms.DisconnectForm",
+}
 
 # Your stuff...
 # ------------------------------------------------------------------------------
