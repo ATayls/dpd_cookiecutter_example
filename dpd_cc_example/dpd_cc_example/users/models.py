@@ -5,6 +5,7 @@ from django.db.models import CharField, EmailField, BooleanField, DateTimeField,
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
+from django_countries.fields import CountryField
 
 
 class UserManager(BaseUserManager):
@@ -44,6 +45,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         },
     )
     name = CharField(_('Name'), max_length=254, null=True, blank=True)
+    country = CountryField(null=True, blank=True)
 
     is_staff = BooleanField(
         _('Staff Status'),
