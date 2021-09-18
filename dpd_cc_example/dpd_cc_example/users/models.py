@@ -46,6 +46,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     name = CharField(_('Name'), max_length=254, null=True, blank=True)
     country = CountryField(null=True, blank=True)
+    favourite_team = CharField(max_length=254, blank=True, null=True)
 
     is_staff = BooleanField(
         _('Staff Status'),

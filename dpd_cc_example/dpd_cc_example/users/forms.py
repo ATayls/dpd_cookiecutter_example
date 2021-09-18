@@ -3,6 +3,9 @@ from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from allauth.account import forms as auth_forms
 from django_countries.fields import CountryField
+from django import forms
+
+from dpd_cc_example.data.models import Team
 
 User = get_user_model()
 
@@ -25,6 +28,7 @@ class UserCreationForm(admin_forms.UserCreationForm):
 class MyCustomSignupForm(auth_forms.SignupForm):
 
     country = CountryField(blank_label='(Select country)').formfield()
+    favourite_team = forms.ModelChoiceField(queryset=Team.objects.all())
 
     def __init__(self, *args, **kwargs):
         super(MyCustomSignupForm, self).__init__(*args, **kwargs)
