@@ -22,6 +22,7 @@ dash==1.21
 django-plotly-dash==1.6.5
 dpd-static-support
 django-bootstrap4
+dash-bootstrap-components
 
 # Other
 # ------------------------------------------------------------------------------
