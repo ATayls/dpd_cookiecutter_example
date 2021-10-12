@@ -1,8 +1,9 @@
 from django.urls import path
 import dpd_cc_example.dashboard.views as views
-from dpd_cc_example.dashboard.dash_app_scripts import basic_dash_app
+from dpd_cc_example.dashboard.dash_app_scripts import basic_dash_app, report_app
 
-app_name = "dashboard_test"
+app_name = "dashboard"
 urlpatterns = [
     path('BasicApp', views.BasicDashApp, name='BasicDashApp'),
+    path('report',views.ReportApp, name='report_app')
 ]

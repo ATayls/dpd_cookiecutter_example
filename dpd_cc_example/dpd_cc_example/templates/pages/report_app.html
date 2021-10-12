@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load plotly_dash %}
+
+{% block content %}
+
+<div class="container d-flex align-items-center flex-column">
+    <h1>Player Reporting</h1>
+</div>
+
+{% plotly_header %}
+
+    <div class="{% plotly_class name='report_app' %} card" style="height: 100%; width: 100%; margin-top: 8vh; border: none;">
+    {% plotly_direct name='report_app'  %}
+    </div>
+
+{% plotly_footer %}
+
+{% endblock %}

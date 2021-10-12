@@ -64,10 +64,18 @@
                 <a class="nav-link" href="{% url 'users:detail' request.user.id  %}">{% translate "My Profile" %}</a>
               </li>
               <li class="nav-item">
+                {# URL provided by dashboard/urls.py #}
+                <a id="sign-up-link" class="nav-link" href="{% url 'dashboard:report_app' %}">{% translate "Report App" %}</a>
+              </li>
+              <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
                 <a class="nav-link" href="{% url 'account_logout' %}">{% translate "Sign Out" %}</a>
               </li>
             {% else %}
+              <li class="nav-item">
+                {# URL provided by dashboard/urls.py #}
+                <a id="sign-up-link" class="nav-link" href="{% url 'dashboard:BasicDashApp' %}">{% translate "Basic App" %}</a>
+              </li>
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
                 <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% translate "Sign Up" %}</a>
